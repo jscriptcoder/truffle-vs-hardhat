@@ -2,13 +2,13 @@ const StakingToken = artifacts.require('StakingToken')
 const truffleAssertions = require('truffle-assertions')
 
 contract('StakingToken', (accounts) => {
-    it('is possible to stake TOKs', async () => {
+    it('Should be possible to stake TOKs', async () => {
         const stakingToken = await StakingToken.deployed()
-        const result = await stakingToken.stake(50)
+        const tx = await stakingToken.stake(50 * 10^18)
 
-        truffleAssertions.eventEmitted(result, 'Transfer')
+        truffleAssertions.eventEmitted(tx, 'Transfer')
 
         const balance = await stakingToken.balanceOf(accounts[0])
-        assert.equal(balance, 50)
+        assert.equal(balance, 50 * 10^18)
     })
 })

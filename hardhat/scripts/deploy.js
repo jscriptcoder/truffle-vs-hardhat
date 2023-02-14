@@ -1,31 +1,31 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
-// will compile your contracts, add the Hardhat Runtime Environment's members to the
-// global scope, and execute the script.
-const hre = require("hardhat");
+const { ethers } = require("hardhat")
 
-async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
+async function deploy() {
+  const SampleToken = await ethers.getContractFactory("SampleToken")
+  const StakingToken = await ethers.getContractFactory("StakingToken")
 
-  const lockedAmount = hre.ethers.utils.parseEther("1");
+  console.log('\nDeploying SampleToken...')
+  const sampleToken = await SampleToken.deploy('Sample Token', 'TOK', 1e6)
+  console.log('SampleToken deployed on address:', sampleToken.address)
+  
+  console.log('\nDeploying StakingToken...')
+  const stakingToken = await StakingToken.deploy('Staking Token', 'SAT', sampleToken.address)
+  console.log('StakingToken deployed on address:', stakingToken.address)
 
-  const Lock = await hre.ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+  console.log('\nGranting permissions...')
+  const [ MINTER_ROLE, BURNER_ROLE ] = await Promise.all([
+    sampleToken.MINTER_ROLE(),
+    sampleToken.BURNER_ROLE(),
+  ])
 
-  await lock.deployed();
+  await sampleToken.grantRole(MINTER_ROLE, stakingToken.address)
+  await sampleToken.grantRole(BURNER_ROLE, stakingToken.address)
+  console.log('Permissions granted')
 
-  console.log(
-    `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
-  );
+  return {
+    sampleToken,
+    stakingToken,
+  }
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+module.exports = deploy
