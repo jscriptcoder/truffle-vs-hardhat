@@ -8,11 +8,11 @@ describe("StakingToken", () => {
         const accounts = await ethers.getSigners()
         const { stakingToken } = await deploy()
 
-        const tx = await stakingToken.stake(50 * 10^18)
+        const tx = await stakingToken.stake(50)
 
         await expect(tx).to.emit(stakingToken, 'Transfer')
 
         const balance = await stakingToken.balanceOf(accounts[0].address)
-        expect(balance, 50).to.equal(50 * 10^18)
+        expect(balance, 50).to.equal(50)
     })
 })
