@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "compile": "hardhat compile",
+    "migrate": "hardhat run scripts/migrate.js",
     "test": "hardhat test"
   },
   "keywords": [],
