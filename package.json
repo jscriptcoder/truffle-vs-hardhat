@@ -1,8 +1,27 @@
 {
+  "name": "truffle-vs-hardhat",
+  "version": "1.0.0",
+  "description": "A comparison between these three frameworks for Smart Contract development.",
+  "scripts": {
+    "install-truffle": "npm install --prefix ./truffle",
+    "install-hardhat": "npm install --prefix ./hardhat",
+    "postinstall": "npm run install-truffle && npm run install-hardhat"
+  },
   "dependencies": {
     "@openzeppelin/contracts": "^4.8.1"
   },
   "devDependencies": {
     "prettier": "2.8.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jscriptcoder/truffle-vs-hardhat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jscriptcoder/truffle-vs-hardhat/issues"
+  },
+  "homepage": "https://github.com/jscriptcoder/truffle-vs-hardhat#readme"
 }
