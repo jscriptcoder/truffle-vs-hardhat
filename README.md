@@ -21,13 +21,11 @@ This will install common dependencies and individual ones for each project.
 1. [Truffle](truffle)
 2. [Hardhat](hardhat)
 
-# .ENV
+### Environment variables
 
 Create a `.env` file with the following environment variables (see [.env.example](.env.example) file):
 
 ```
-# .env
-
 MNEMONIC=...
 PROJECT_URL=...
 ```
