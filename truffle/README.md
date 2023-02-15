@@ -2,7 +2,9 @@
   <img src="public/truffle_logo.png" height="200" />
 </div>
 
-## CLI
+# Truffle
+
+### CLI
 
 - `npx truffle compile`: compiles the contracts
 - `npx truffle migrate`: deploys on a local network
