@@ -7,4 +7,5 @@ node_modules
 typechain-types
 
 .env
+.DS_Store
 coverage.json
