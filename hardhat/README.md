@@ -2,7 +2,9 @@
   <img src="public/hardhat_logo.png" height="200" />
 </div>
 
-## Scripts
+# Hardhat
+
+### CLI
 
 - `npx hardhat compile`: compiles the contracts
 - `npx hardhat run scripts/migrate.js`: deploys on a local network
