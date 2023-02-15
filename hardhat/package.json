@@ -6,6 +6,7 @@
   "scripts": {
     "compile": "hardhat compile",
     "migrate": "hardhat run scripts/migrate.js",
+    "migrate-ganache": "hardhat run --network ganache scripts/migrate.js",
     "test": "hardhat test"
   },
   "keywords": [],

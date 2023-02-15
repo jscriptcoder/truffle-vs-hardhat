@@ -8,7 +8,8 @@
     "postinstall": "npm run install-truffle && npm run install-hardhat"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.8.1"
+    "@openzeppelin/contracts": "^4.8.1",
+    "dotenv": "^16.0.3"
   },
   "devDependencies": {
     "prettier": "2.8.4"

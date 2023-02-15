@@ -1,7 +1,7 @@
 const { expect } = require('chai')
 const { ethers } = require('hardhat')
 
-const deploy = require('../scripts/deploy')
+const deploy = require('../utils/deploy')
 
 describe('StakingToken', () => {
   it('Should be possible to stake TOKs and unstake SATs', async () => {
