@@ -1,3 +1,3 @@
 <div align="center">
-  <img src="public/hardhat_logo.svg" height="100" />
+  <img src="public/hardhat_logo.png" height="200" />
 </div>
