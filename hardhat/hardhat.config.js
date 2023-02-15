@@ -1,6 +1,6 @@
 require('@nomicfoundation/hardhat-toolbox')
 
-require('dotenv').config()
+require('dotenv').config({ path: '../.env' })
 const { MNEMONIC, PROJECT_URL } = process.env
 
 /** @type import('hardhat/config').HardhatUserConfig */

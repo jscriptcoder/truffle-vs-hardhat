@@ -7,6 +7,7 @@
     "compile": "truffle compile",
     "migrate": "truffle migrate",
     "migrate-ganache": "truffle migrate --network ganache",
+    "migrate-goerli": "truffle migrate --network goerli",
     "test": "truffle test"
   },
   "keywords": [],

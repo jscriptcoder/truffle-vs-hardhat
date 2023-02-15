@@ -7,6 +7,7 @@
     "compile": "hardhat compile",
     "migrate": "hardhat run scripts/migrate.js",
     "migrate-ganache": "hardhat run --network ganache scripts/migrate.js",
+    "migrate-goerli": "hardhat run --network goerli scripts/migrate.js",
     "test": "hardhat test"
   },
   "keywords": [],
