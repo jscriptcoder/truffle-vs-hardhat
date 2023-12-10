@@ -1,4 +1,4 @@
-# Truffle vs Hardhat vs Foundry
+# Truffle vs Hardhat vs Foundry (IN PROGRESS)
 
 A comparison between these three frameworks for Smart Contract development.
 
