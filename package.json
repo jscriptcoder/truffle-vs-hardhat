@@ -5,7 +5,8 @@
   "scripts": {
     "install-truffle": "npm install --prefix ./truffle",
     "install-hardhat": "npm install --prefix ./hardhat",
-    "postinstall": "npm run install-truffle && npm run install-hardhat"
+    "install-foundry": "npm install --prefix ./foundry",
+    "postinstall": "npm run install-truffle && npm run install-hardhat && npm run install-foundry"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.8.1",
