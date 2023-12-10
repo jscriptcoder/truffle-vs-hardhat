@@ -11,9 +11,9 @@ A comparison between these three frameworks for Smart Contract development.
 Open a terminal and run the following commands:
 
 ```bash
-$ git clone https://github.com/jscriptcoder/truffle-vs-hardhat.git
-$ cd truffle-vs-hardhat
-$ npm install
+git clone $ git clone https://github.com/jscriptcoder/truffle-vs-hardhat-vs-foundry.git
+cd truffle-vs-hardhat-vs-foundry
+npm install
 ```
 
 This will install common dependencies and individual ones for each project.
